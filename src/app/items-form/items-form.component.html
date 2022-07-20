@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="../../../assets/details.svg" height="100%" width="100%">
+        </div>
+        <div class="col-md-4 mt-3">
+            <!-- <h3 class="text-success text-center">Welcome to Feastfreedom</h3> -->
+            <form class="mt-4 form-inline">
+                <h3 class="text-primary mb-3">Provider details</h3>
+                <label> Working Days: </label>
+                <div class="form-check">
+                    <input class="form-inline" type="checkbox" value="" id="flexCheckMonday" />
+                    <label class="form-check-label" for="flexCheckMonday">Monday</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-inline" type="checkbox" value="" id="flexCheckTuesday" />
+                    <label class="form-check-label" for="flexCheckTuesday">Tuesday</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-inline" type="checkbox" value="" id="flexCheckWednesday" />
+                    <label class="form-check-label" for="flexCheckWednesday">Wednesday</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-inline" type="checkbox" value="" id="flexCheckThursday" />
+                    <label class="form-check-label" for="flexCheckThursday">Thursday</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-inline" type="checkbox" value="" id="flexCheckFriday" />
+                    <label class="form-check-label" for="flexCheckFriday">Friday</label>
+                </div>
+                <br>
+                <label> Working Time: </label>
+                <div class="form-floating mb-3">
+                    <select class="form-select form-inline" id="floatingSelect" aria-label="Time1" name="starttime"
+                        [(ngModel)]="starttime">
+                        <option *ngFor="let t1 of time1" [value]="t1">{{t1}}</option>
+                    </select>
+                    <label for="floatingSelect">Start Time</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <select class="form-select form-inline" id="floatingSelect" aria-label="Time2" name="endtime"
+                        [(ngModel)]="endtime">
+                        <option *ngFor="let t2 of time2" [value]="t2">{{t2}}</option>
+                    </select>
+                    <label for="floatingSelect">End Time</label>
+                </div>
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-outline-success me-md-2" routerLink="/"
+                        (click)="save()">Save</button>
+                </div>
+                <a routerLink="/" class="btn btn-danger me-md-2">Cancel</a>
+            </form>
+        </div>
+        <div class="col-md 2">
+
+        </div>
+    </div>
+</div>

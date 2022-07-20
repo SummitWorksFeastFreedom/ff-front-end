@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../../../assets/signUp.webp" height="100%" width="100%">
+    </div>
+    <div class="col-md-4 mt-3">
+      <h3 class="text-success text-center">Welcome</h3>
+      <form class="mt-4">
+        <h5 class="text-primary mb-3">Sign up</h5>
+        <div class="form-floating mb-3">
+
+          <input type="text" class="form-control" id="floatingInput" placeholder="firstname" name="firstname"
+            [(ngModel)]="firstname">
+          <label for="floatingInput">First Name</label>
+        </div>
+        <div class="form-floating mb-3">
+
+          <input type="text" class="form-control" id="floatingInput" placeholder="lastname" name="lastname"
+            [(ngModel)]="lastname">
+          <label for="floatingInput">Last Name</label>
+        </div>
+        <div class="form-floating mb-3">
+
+          <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username"
+            [(ngModel)]="username">
+          <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating mb-3">
+
+          <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="password"
+            [(ngModel)]="password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button type="button" class="btn btn-outline-success me-md-2" (click)="signup()">Register</button>
+        </div>
+        <a routerLink="/login-form" class="text-primary" style="text-decoration: none;">Log in</a>
+      </form>
+    </div>
+  </div>
+</div>
