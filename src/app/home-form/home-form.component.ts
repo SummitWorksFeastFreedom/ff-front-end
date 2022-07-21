@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-home-form',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeFormComponent implements OnInit {
 
-  constructor() { }
+    email = ''
+    password = ''
+    invalidLogin = false
 
-  ngOnInit(): void {
-  }
+    constructor(private router: Router,
+        private loginservice: AuthenticationService) { }
+    
+    ngOnInit() { }
 
+
+    checkLogin() {
+        if (this.loginservice.authenticate(this.email, this.password)) {
+            this.router.navigate(['customer-page'])
+            this.invalidLogin = false
+        } else
+            this.invalidLogin = true
+    }
 }
