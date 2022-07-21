@@ -40,6 +40,9 @@ export class KitchenFormComponent implements OnInit {
         this.newKitchen.address = this.kitchenForm.value.address
         this.newKitchen.email = this.kitchenForm.value.email
         this.newKitchen.phone = this.kitchenForm.value.phone
+
+        console.log(this.newKitchen)
+
         this.kitchenService.addKitchen(this.newKitchen).subscribe();
         this.router.navigate(['customer-page']).then(() => {
             window.location.reload();
