@@ -1,41 +1,54 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-6">
-      <img src="../../../assets/signUp.webp" height="100%" width="100%">
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+                <div class="text-center text-white">
+                    <h1 class="h2">Register</h1>
+                    <p class="lead">
+                        Join our application today as a Customer or Service Provider and start enjoying Feast Freedom together!
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                            <form>
+                                <h4 class="text-center">First Name</h4>
+                                <div class="form-group mb-2">
+                                    <input class="form-control form-control-lg" type="text" name="name" placeholder="Enter your first name">
+                                </div>
+                                <h4 class="text-center">Last Name</h4>
+                                <div class="form-group mb-2 mt-2">
+                                    <input class="form-control form-control-lg" type="text" name="company" placeholder="Enter your last name">
+                                </div>
+                                <h4 class="text-center">Email</h4>
+                                <div class="form-group mb-2 mt-2">
+                                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email">
+                                </div>
+                                <h4 class="text-center">Password</h4>
+                                <div class="form-group mb-2 mt-2">
+                                    <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter password">
+                                </div>
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="radio" name="customer" id="customer" checked>
+                                    <label class="form-check-label" for="customer">
+                                    Customer
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="serviceProvider" id="serviceProvider">
+                                    <label class="form-check-label" for="serviceProvider">
+                                    Service Provider
+                                    </label>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-lg btn-secondary">Sign up</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="col-md-4 mt-3">
-      <h3 class="text-success text-center">Welcome</h3>
-      <form class="mt-4">
-        <h5 class="text-primary mb-3">Sign up</h5>
-        <div class="form-floating mb-3">
-
-          <input type="text" class="form-control" id="floatingInput" placeholder="firstname" name="firstname"
-            [(ngModel)]="firstname">
-          <label for="floatingInput">First Name</label>
-        </div>
-        <div class="form-floating mb-3">
-
-          <input type="text" class="form-control" id="floatingInput" placeholder="lastname" name="lastname"
-            [(ngModel)]="lastname">
-          <label for="floatingInput">Last Name</label>
-        </div>
-        <div class="form-floating mb-3">
-
-          <input type="text" class="form-control" id="floatingInput" placeholder="username" name="username"
-            [(ngModel)]="username">
-          <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating mb-3">
-
-          <input type="password" class="form-control" id="floatingPassword" placeholder="password" name="password"
-            [(ngModel)]="password">
-          <label for="floatingPassword">Password</label>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button type="button" class="btn btn-outline-success me-md-2" (click)="signup()">Register</button>
-        </div>
-        <a routerLink="/login-form" class="text-primary" style="text-decoration: none;">Log in</a>
-      </form>
-    </div>
-  </div>
 </div>

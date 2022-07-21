@@ -7,17 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterFormComponent implements OnInit {
 
-  firstname:String='';
-  lastname:String='';
-  username:String='';
-  password:string='';
+  firstName: string='';
+  lastName: string='';
+  username: string='';
+  password: string='';
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
+  
   signup(){
-    console.log(this.firstname + " " + this.lastname + " " + this.username + " " + this.password);
+    console.log(this.firstName + " " + this.lastName + " " + this.username + " " + this.password);
   }
 
 }

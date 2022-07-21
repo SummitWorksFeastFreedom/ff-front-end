@@ -3,26 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginFormComponent } from './login-form/login-form.component';
 import { RegisterFormComponent } from './register-form/register-form.component';
 import { ProviderFormComponent } from './provider-form/provider-form.component';
 import { HomeFormComponent } from './home-form/home-form.component';
-import { ItemsFormComponent } from './items-form/items-form.component';
+import { CustomerPageComponent } from './customer-page/customer-page.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent,
     RegisterFormComponent,
     ProviderFormComponent,
     HomeFormComponent,
-    ItemsFormComponent
+    CustomerPageComponent,
+    NavbarComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
