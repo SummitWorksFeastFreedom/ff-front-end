@@ -11,35 +11,28 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="m-sm-4">
-                            <form>
+                            <form [formGroup]="registerForm" (ngSubmit)="signup()">
                                 <h4 class="text-center">First Name</h4>
                                 <div class="form-group mb-2">
-                                    <input class="form-control form-control-lg" type="text" name="name" placeholder="Enter your first name">
+                                    <input class="form-control form-control-lg" type="text" formControlName="firstName" placeholder="Enter your first name" required>
                                 </div>
                                 <h4 class="text-center">Last Name</h4>
                                 <div class="form-group mb-2 mt-2">
-                                    <input class="form-control form-control-lg" type="text" name="company" placeholder="Enter your last name">
+                                    <input class="form-control form-control-lg" type="text" formControlName="lastName" placeholder="Enter your last name" required>
                                 </div>
                                 <h4 class="text-center">Email</h4>
                                 <div class="form-group mb-2 mt-2">
-                                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email">
+                                    <input class="form-control form-control-lg" type="email" formControlName="email" placeholder="Enter your email" required>
                                 </div>
                                 <h4 class="text-center">Password</h4>
                                 <div class="form-group mb-2 mt-2">
-                                    <input class="form-control form-control-lg" type="password" name="password" placeholder="Enter password">
+                                    <input class="form-control form-control-lg" type="password" formControlName="password" placeholder="Enter password" required>
                                 </div>
-                                <div class="form-check mt-4">
-                                    <input class="form-check-input" type="radio" name="customer" id="customer" checked>
-                                    <label class="form-check-label" for="customer">
-                                    Customer
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="serviceProvider" id="serviceProvider">
-                                    <label class="form-check-label" for="serviceProvider">
-                                    Service Provider
-                                    </label>
-                                </div>
+                                <select class="form-select mt-4" formControlName="role" aria-label="Default select example">
+                                    <option selected>Select Account Type</option>
+                                    <option value="customer">Customer</option>
+                                    <option value="serviceProvider">Service Provider</option>
+                                  </select>
                                 <div class="text-center mt-3">
                                     <button type="submit" class="btn btn-lg btn-secondary">Sign up</button>
                                 </div>
