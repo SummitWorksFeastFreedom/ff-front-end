@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { RegisterService } from '../service/register.service';
 
 @Component({
   selector: 'app-register-form',
@@ -7,17 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterFormComponent implements OnInit {
 
-  firstName: string='';
-  lastName: string='';
-  username: string='';
-  password: string='';
+    items = this.registerService.getItems();
 
-  constructor() { }
+    registerForm = this.formBuilder.group({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        role: 'Select Account Type'
+    });
 
-  ngOnInit(): void { }
-  
-  signup(){
-    console.log(this.firstName + " " + this.lastName + " " + this.username + " " + this.password);
-  }
+    constructor(private registerService: RegisterService, private formBuilder: FormBuilder) { }
+
+    ngOnInit(): void { }
+    
+    signup(){
+        console.log(this.registerForm.value);
+    }
 
 }

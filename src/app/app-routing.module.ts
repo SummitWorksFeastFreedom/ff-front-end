@@ -9,7 +9,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGuardService } from './service/auth-guard.service';
 
 const routes: Routes = [
-  {path:'register-form', component:RegisterFormComponent, canActivate:[AuthGuardService]},
+  {path:'register-form', component:RegisterFormComponent},
   {path:'provider-form', component:ProviderFormComponent, canActivate:[AuthGuardService]},
   {path:'', component:HomeFormComponent},
   {path:'customer-page', component:CustomerPageComponent, canActivate:[AuthGuardService]},
