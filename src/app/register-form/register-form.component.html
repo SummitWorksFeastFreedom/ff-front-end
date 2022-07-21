@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="m-sm-4">
-                            <form [formGroup]="registerForm" (ngSubmit)="signup()">
+                            <form [formGroup]="registerForm" (ngSubmit)="signup()" ngNativeValidate>
                                 <h4 class="text-center">First Name</h4>
                                 <div class="form-group mb-2">
                                     <input class="form-control form-control-lg" type="text" formControlName="firstName" placeholder="Enter your first name" required>
@@ -28,13 +28,14 @@
                                 <div class="form-group mb-2 mt-2">
                                     <input class="form-control form-control-lg" type="password" formControlName="password" placeholder="Enter password" required>
                                 </div>
-                                <select class="form-select mt-4" formControlName="role" aria-label="Default select example">
-                                    <option selected>Select Account Type</option>
-                                    <option value="customer">Customer</option>
-                                    <option value="serviceProvider">Service Provider</option>
-                                  </select>
+                                <h4 class="text-center">Select Account Type</h4>
+                                <select class="form-select mt-2" formControlName="role" aria-label="Default select example">
+                                    <option value="CUSTOMER" selected>Customer</option>
+                                    <option value="SERVICEPROVIDER">Service Provider</option>
+                                </select>
                                 <div class="text-center mt-3">
-                                    <button type="submit" class="btn btn-lg btn-secondary">Sign up</button>
+                                    <a href="#" class="btn btn-lg btn-secondary mx-5">Login</a>
+                                    <button type="submit" class="btn btn-lg btn-secondary mx-5">Sign up</button>
                                 </div>
                             </form>
                         </div>

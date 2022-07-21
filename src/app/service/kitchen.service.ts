@@ -8,6 +8,12 @@ import { environment } from 'src/environments/environment';
 export class KitchenService {
     private apiServerUrl = environment.apiBaseUrl;
 
+    items: Kitchen[] = [];
+
+    getItems(): Kitchen[] {
+        return this.items;
+    }
+
     constructor(private http: HttpClient){}
 
     public getKitchens(): Observable<Kitchen[]> {
