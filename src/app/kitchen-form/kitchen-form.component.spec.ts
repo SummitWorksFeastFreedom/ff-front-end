@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProviderFormComponent } from './provider-form.component';
+import { KitchenFormComponent } from './kitchen-form.component';
 
-describe('ProviderFormComponent', () => {
-  let component: ProviderFormComponent;
-  let fixture: ComponentFixture<ProviderFormComponent>;
+describe('KitchenFormComponent', () => {
+  let component: KitchenFormComponent;
+  let fixture: ComponentFixture<KitchenFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProviderFormComponent ]
+      declarations: [ KitchenFormComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProviderFormComponent);
+    fixture = TestBed.createComponent(KitchenFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
