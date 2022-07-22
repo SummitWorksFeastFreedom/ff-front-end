@@ -22,8 +22,8 @@ export class CustomerService {
         return this.http.post<Customer>(`${this.apiServerUrl}/customer/create`, customer, {headers: this.headers});
     }
 
-    public login(email: string, password: string): Observable<Customer> {
-        return this.http.get<Customer>(`${this.apiServerUrl}/login/${email}/${password}`, {headers: this.headers});
+    public login(customer: Customer): Observable<Customer> {
+        return this.http.post<Customer>(`${this.apiServerUrl}/login`, customer, {headers: this.headers});
     }
 
 }

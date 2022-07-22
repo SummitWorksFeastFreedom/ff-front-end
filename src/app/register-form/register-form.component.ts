@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Customer } from '../service/customer';
 import { CustomerService } from '../service/customer.service';
-import { RegisterService } from '../service/register.service';
 
 @Component({
   selector: 'app-register-form',
@@ -12,7 +11,6 @@ import { RegisterService } from '../service/register.service';
 })
 export class RegisterFormComponent implements OnInit {
 
-    items = this.registerService.getItems()
 
     newCustomer: Customer = {
         id: 0,
@@ -31,7 +29,7 @@ export class RegisterFormComponent implements OnInit {
         role: 'CUSTOMER'
     })
 
-    constructor(private registerService: RegisterService, 
+    constructor(
         private formBuilder: FormBuilder, 
         private customerService: CustomerService,
         private router: Router  
