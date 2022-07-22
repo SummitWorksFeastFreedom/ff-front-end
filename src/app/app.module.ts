@@ -9,7 +9,6 @@ import { CustomerPageComponent } from './customer-page/customer-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LogoutComponent } from './logout/logout.component';
 import { KitchenFormComponent } from './kitchen-form/kitchen-form.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { KitchenFormComponent } from './kitchen-form/kitchen-form.component';
     HomeFormComponent,
     CustomerPageComponent,
     NavbarComponent,
-    LogoutComponent,
     KitchenFormComponent,
 ],
 imports: [

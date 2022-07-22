@@ -4,11 +4,11 @@
             <a class="navbar-brand">FeastFreedom.com</a>
             <div id="main-nav" class="collapse navbar-collapse">
                 <ul class="navbar-nav ml-auto">
-                    <li><a href="customer-page" class="nav-item nav-link active">Home</a></li>
-                    <li><a href="kitchen-form" class="nav-item nav-link">New Kitchen</a></li>
-                    <li><a class="nav-item nav-link">Contact Us</a></li>
-                    <li><a class="nav-item nav-link">Cart</a></li>
-                    <li><a href="logout" class="nav-item nav-link">Logout</a></li>
+                    <li><button routerLink="/customer-page" class="nav-item nav-link btn btn-secondary">Home</button></li>
+                    <li><button routerLink="/kitchen-form" class="nav-item nav-link btn btn-secondary">New Kitchen</button></li>
+                    <li><button class="nav-item nav-link btn btn-secondary">Contact Us</button></li>
+                    <li><button class="nav-item nav-link btn btn-secondary">Cart</button></li>
+                    <li><button (click)="logOut()" class="nav-item nav-link btn btn-secondary">Logout</button></li>
                 </ul>
             </div>
         </div>

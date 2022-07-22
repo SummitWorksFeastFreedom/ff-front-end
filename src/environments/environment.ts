@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://18.212.42.192:8443/feastfreedom-0.0.1-SNAPSHOT'
+  apiBaseUrl: 'http://localhost:8090'
 };
 
 /*

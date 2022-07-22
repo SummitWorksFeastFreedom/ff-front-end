@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 
@@ -9,21 +10,35 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class HomeFormComponent implements OnInit {
 
-    email = ''
-    password = ''
+    newCustomer: any = {
+        email: '',
+        password: ''
+    }
+
     invalidLogin = false
 
+    loginForm = this.formBuilder.group({
+        email: '',
+        password: ''
+    })
+
     constructor(private router: Router,
-        private loginservice: AuthenticationService) { }
+        private loginservice: AuthenticationService,
+        private formBuilder: FormBuilder, ) { }
     
     ngOnInit() { }
 
 
     checkLogin() {
-        if (this.loginservice.authenticate(this.email, this.password)) {
-            this.router.navigate(['customer-page'])
+        this.newCustomer.email = this.loginForm.value.email
+        this.newCustomer.password = this.loginForm.value.password
+        if (this.loginservice.authenticate(this.newCustomer)) {
             this.invalidLogin = false
-        } else
+            this.router.navigate(['customer-page'])
+        } else {
+            // sessionStorage.removeItem('email')
             this.invalidLogin = true
+        }
+            
     }
 }

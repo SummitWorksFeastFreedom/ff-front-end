@@ -8,16 +8,16 @@ import { CustomerService } from './customer.service';
 })
 export class AuthenticationService {
 
-    customer: Customer | undefined;
+    customer: Customer | undefined | null;
 
     constructor(private customerService: CustomerService) { }
 
-    authenticate(email: string, password: string) {
-        this.customerService.login(email, password).subscribe(
+    authenticate(customerForm: any) {
+        if(this.customerService.login(customerForm).subscribe(
             (response: Customer) => {
                 this.customer = response;
-                if (email === this.customer?.email) {
-                    sessionStorage.setItem('email', email)
+                if (customerForm.email === this.customer?.email) {
+                    sessionStorage.setItem('email', customerForm.email)
                     return true;
                 } else {
                     alert("Incorrect Email or Password");
@@ -27,8 +27,11 @@ export class AuthenticationService {
             (error: HttpErrorResponse) => {
                 alert(error.message);
             }
-        )
-        return true;
+        )) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     isUserLoggedIn() {
@@ -36,9 +39,7 @@ export class AuthenticationService {
         return !(user === null)
     }
 
-    checkRole() {
-
-    }
+    checkRole() { }
 
     logOut() {
         sessionStorage.removeItem('email');

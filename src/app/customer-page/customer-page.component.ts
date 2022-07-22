@@ -1,9 +1,7 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Kitchen } from '../service/kitchen';
 import { KitchenService } from '../service/kitchen.service';
-import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-customer-page',
@@ -18,18 +16,12 @@ export class CustomerPageComponent implements OnInit {
     
 
     ngOnInit(): void {
-        this.getKitchens();
+        setInterval(() => {
+            this.kitchenService.getKitchens().subscribe(
+                (response: Kitchen[]) => {
+                    this.kitchens = response;
+                }
+            )
+        }, 2000);
     }
-
-    public getKitchens(): void {
-        this.kitchenService.getKitchens().subscribe(
-            (response: Kitchen[]) => {
-                this.kitchens = response;
-            },
-            (error: HttpErrorResponse) => {
-                alert(error.message);
-            }
-        )
-    }
-
 }
